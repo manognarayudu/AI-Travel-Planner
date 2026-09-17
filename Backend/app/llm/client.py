@@ -1,16 +1,21 @@
 import os
 
-from langchain_google_genai import ChatGoogleGenerativeAI
+from langchain_openai import ChatOpenAI
 
 
-api_key = os.getenv("GEMINI_API_KEY")
+OPENROUTER_API_KEY = os.getenv("OPENROUTER_API_KEY")
 
-if not api_key:
-    raise RuntimeError("GEMINI_API_KEY environment variable is not set")
+if not OPENROUTER_API_KEY:
+    raise RuntimeError("OPENROUTER_API_KEY environment variable is not set")
 
 
-llm = ChatGoogleGenerativeAI(
-    model="gemini-3.8-flash",
-    google_api_key=api_key,
+llm = ChatOpenAI(
+    model="nex-agi/nex-n2.5-pro:free",
     temperature=0,
+    api_key=OPENROUTER_API_KEY,
+    base_url="https://openrouter.ai/api/v1",
+    default_headers={
+        "HTTP-Referer": "https://ai-travel-planner-i57s5rne7-manognya.vercel.app",
+        "X-Title": "AI Travel Planner",
+    },
 )
