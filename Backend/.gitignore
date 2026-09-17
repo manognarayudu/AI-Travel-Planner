@@ -1,0 +1,218 @@
+# Created by venv; see https://docs.python.org/3/library/venv.html# ================================
+
+# Python / FastAPI Backend
+
+# ================================
+
+**pycache**/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+
+venv/
+.venv/
+env/
+ENV/
+
+# Python packaging
+
+*.egg
+*.egg-info/
+dist/
+build/
+pip-wheel-metadata/
+.pytest_cache/
+.coverage
+htmlcov/
+
+# ================================
+
+# Environment Variables / Secrets
+
+# ================================
+
+.env
+.env.*
+!.env.example
+
+# ================================
+
+# FastAPI / Uvicorn
+
+# ================================
+
+*.log
+
+# ================================
+
+# Database
+
+# ================================
+
+*.db
+*.sqlite3
+
+# ================================
+
+# IDE / Editors
+
+# ================================
+
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# ================================
+
+# Operating System
+
+# ================================
+
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ================================
+
+# Node / React / Vite Frontend
+
+# ================================
+
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Build output
+
+dist/
+build/
+.vite/
+
+# ================================
+
+# Frontend Environment Variables
+
+# ================================
+
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# ================================
+
+# Testing / Coverage
+
+# ================================
+
+coverage/
+.nyc_output/
+
+# ================================
+
+# Temporary Files
+
+# ================================
+
+*.tmp
+*.temp
+*.bak
+
+# ================================
+
+# Uploaded / Generated Files
+
+# ================================
+
+uploads/
+uploaded_files/
+generated_files/
+temp/
+tmp/
+
+# ================================
+
+# AI / RAG / Vector Databases
+
+# ================================
+
+chroma/
+chroma_db/
+vectorstore/
+vector_db/
+.faiss/
+*.faiss
+*.index
+
+# ================================
+
+# Cache
+
+# ================================
+
+.cache/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# ================================
+
+# Local Development
+
+# ================================
+
+*.local
+
+````
+
+### Your project structure can look like
+
+```text
+travel-planner/
+│
+├── backend/
+│   ├── app/
+│   ├── requirements.txt
+│   ├── .env
+│   └── .gitignore
+│
+├── frontend/
+│   ├── src/
+│   ├── public/
+│   ├── package.json
+│   └── .env
+│
+├── .gitignore
+├── README.md
+└── .env.example
+````
+
+**Important:** I recommend keeping **one `.gitignore` in the project root** rather than separate ones.
+
+Also create an `.env.example` containing **only variable names**, for example:
+
+```env
+OPENAI_API_KEY=
+WEATHER_API_KEY=
+MAPS_API_KEY=
+SEARCH_API_KEY=
+DATABASE_URL=
+REDIS_URL=
+```
+
+Never commit your real `.env` file or API keys to GitHub.
+
+Then you can safely run:
+
+```bash
+git add .
+git status
+git commit -m "Initial project setup"
+git push
+```
+
+Before pushing, **check `git status` and make sure `.env` and `node_modules` are not listed.**
